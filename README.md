@@ -1,6 +1,6 @@
 # icmpc-escom-2021-programme
 
-Creating a CSV version of ICMPC-ESCOM 2021 programme with datetime objects
+Creating a CSV version of ICMPC-ESCOM 2021 programme with datetime objects.
 
 ### PROGRAMME.pdf
 
@@ -16,7 +16,11 @@ This CSV file is a (slightly) cleaned up version of the talk schedule.
 
 ### ICMPC-ESCOM-2021-Programme-Datetime.csv
 
-This CSV file uses the script add_timezones.R to add datetime columns for UTC and EST
+This CSV file uses the script add_timezones.R to add datetime columns for UTC and EST.
+
+### add_timezones.R
+
+Edit this script to add your time zone.
 
 ### Notice errors?
 
