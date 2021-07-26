@@ -16,11 +16,11 @@ This CSV file is a (slightly) cleaned up version of the talk schedule.
 
 ### ICMPC-ESCOM-2021-Programme-Datetime.csv
 
-This CSV file uses the script add_timezones.R to add datetime columns for UTC and EST.
+This CSV file uses the script add_timezones.R to add datetime columns for UTC and America/Toronto.
 
 ### add_timezones.R
 
-Edit this script to add your time zone.
+Edit this script to add your time zone and generate local times.
 
 ### Notice errors?
 

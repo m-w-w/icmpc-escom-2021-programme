@@ -8,6 +8,9 @@ library(tidyverse)
 # where should the file save on your computer?
 path_to_save <- '/where/do/you/want/the/file/to/go'
 
+# what is your time zone label? Run Sys.timezone() or OlsonNames() to find a valid name
+time_zone_code <- 'America/Toronto'
+  
 # read the data from GitHub
 df <- read_csv('https://raw.githubusercontent.com/m-w-w/icmpc-escom-2021-programme/main/ICMPC-ESCOM-2021-Programme.csv')
 
@@ -33,11 +36,13 @@ df <-
 
 # to add another timezone, use the function "with_tz()"
 # we use format() so that it writes correctly when saving
+rename_datetime <- function(x) paste('Datetime_',time_zone_code,sep='')
 df <- 
   df %>%
   mutate(
-    Datetime_EST = format(with_tz(Datetime_UTC, "EST"), usetz=TRUE), # copy or edit this line
-  ) 
+    Datetime_ = format(with_tz(Datetime_UTC, time_zone_code), usetz=TRUE), 
+  ) %>%
+  rename_at('Datetime_', rename_datetime)
 
 # finally, we can format the UTC datetime, reorder cols, and write the file
 # to the path specified at the top of the script
@@ -50,7 +55,8 @@ df <-
     Day,
     `Time (UTC)`,
     Datetime_UTC,
-    Datetime_EST,
+    starts_with('Datetime_'), # dynamically named
     everything()
   ) %>%
   write_csv(file.path(path_to_save,'ICMPC-ESCOM-2021-Programme-Datetimes.csv'))
+
