@@ -32,7 +32,7 @@ df <-
   )
 
 # to add another timezone, use the function "with_tz()"
-# we use format() so all columns so that it writes correctly when saving
+# we use format() so that it writes correctly when saving
 df <- 
   df %>%
   mutate(
@@ -40,7 +40,7 @@ df <-
   ) 
 
 # finally, we can format the UTC datetime, reorder cols, and write the file
-# to the path speficied at the top of the script
+# to the path specified at the top of the script
 df <- 
   df %>%
   mutate(
