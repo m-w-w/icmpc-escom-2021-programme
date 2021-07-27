@@ -16,7 +16,7 @@ This CSV file is a (slightly) cleaned up version of the talk schedule.
 
 ### ICMPC-ESCOM-2021-Programme-Datetime.csv
 
-This CSV file uses the script add_timezones.R to add datetime columns for UTC and America/Toronto.
+This CSV file uses the script add_timezones.R to add datetime columns for UTC and America/Toronto. It also fixes the odd choice in the original programme to list talks at 23:00 hours as happening on the subsequent day (e.g., talks at time "23 (Weds)" were listed on the page for Thursday).
 
 ### add_timezones.R
 
